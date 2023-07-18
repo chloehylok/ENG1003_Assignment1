@@ -1,0 +1,93 @@
+
+<html>
+  <head>
+      <title>We are Groots - Inventory</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="moss-verification-code" content="057019abb25c78dddcde5a948b3d53a492aa24ae1ca6f4269b41b481b5fcbb9e">
+      <meta name="copyright" content="Monash University">
+      <!-- MDL library -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_purple.min.css" />
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <!-- dialog polyfill library -->
+      <link rel="stylesheet" href="libs/polyfill/dialog-polyfill.css" />
+      <script src="libs/polyfill/dialog-polyfill.js"></script>
+      <!-- extra styling for MDL header row not to have menu on left -->
+      <style>
+          .mdl-layout__header-row {
+              padding: 0 16px 0 16px;
+          }
+          a {
+              cursor: pointer;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+              <div class="mdl-layout__header-row">
+                  <!-- Title -->
+                  <span class="mdl-layout-title">We are Groots - Inventory</span>
+                  <!-- Add spacer, to align navigation to the right -->
+                  <div class="mdl-layout-spacer"></div>
+                  <!-- Navigation. We hide it in small screens. -->
+                  <nav class="mdl-navigation">
+                      <a class="mdl-navigation__link" onclick="addClothingCategory()">Add Category</a>
+                      <a class="mdl-navigation__link" onclick="addClothingItem()">Add Clothing Item</a>
+                  </nav>
+              </div>
+          </header>
+          <main class="mdl-layout__content">
+              <div class="page-content">
+                  <div class="mdl-grid">
+                      <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                          <h4>Current Inventory Status</h4>
+                      </div>
+                      <!-- start dialog polyfill for adding clothing items -->
+                      <dialog class="mdl-dialog" id="addDialog">
+                        <h4 class="mdl-dialog__title">Add Clothing Item</h4>
+                        <div class="mdl-dialog__content">
+                          <div class="mdl-grid">
+                            <!-- begin inputs -->
+                            <div class="mdl-cell mdl-cell--12-col">
+                              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
+                                <input class="mdl-textfield__input" type="text" id="newItemName">
+                                <label class="mdl-textfield__label" for="newItemName">Item Name</label>
+                              </div><br>
+                              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
+                                <input class="mdl-textfield__input" type="text" id="newItemStock">
+                                <label class="mdl-textfield__label" for="newItemStock">Stock</label>
+                              </div><br>
+                              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
+                                <input class="mdl-textfield__input" type="text" id="newItemPrice">
+                                <label class="mdl-textfield__label" for="newItemPrice">Unit Price</label>
+                              </div><br>
+                              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
+                                <label class="mdl-textfield__label" for="newItemCategory">Category</label>
+                                <select class="mdl-textfield__input" id="newItemCategory">
+                                  <option value=""></option> <!-- default option should always be empty -->
+                                </select>
+                              </div><br>
+                            </div>
+                            <!-- end inputs -->
+                          </div>
+                        </div>
+                        <div class="mdl-dialog__actions">
+                          <!-- begin dialog actions -->
+                          <button type="button" class="mdl-button" onclick="confirmAddClothingItem()">Add</button>
+                          <button type="button" class="mdl-button close" onclick="cancelAddClothingItem()">Cancel</button>
+                          <!-- end dialog actions -->
+                        </div>
+                      </dialog>
+                      <!-- end dialog polyfill for adding clothing items -->
+                  </div>
+                  <div id="inventoryContainer">
+                    <!-- placeholder for inventory display -->
+                  </div>
+              </div>
+          </main>
+      </div>
+      <script src="js/shared.js"></script>
+      <script src="js/main.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>We are Groots - Inventory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="moss-verification-code" content="057019abb25c78dddcde5a948b3d53a492aa24ae1ca6f4269b41b481b5fcbb9e">
+    <meta name="copyright" content="Monash University">
+    <!-- MDL library -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_purple.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- extra styling for MDL header row not to have menu on left -->
+    <style>
+        .mdl-layout__header-row {
+            padding: 0 16px 0 16px;
+        }
+        a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">We are Groots - Inventory</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="index.html">Back</a>
+                </nav>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- placeholder for edit page content -->
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                        <h4>Editing Page</h4>
+                    </div>
+                    <!-- start dialog polyfill for adding clothing items -->
+                    
+                    <!-- end dialog polyfill for adding clothing items -->
+                </div>
+                <div id="inventoryContainer">
+                  <!-- placeholder for inventory display -->
+                  <!-- start category 1 -->
+                  <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone"
+                        id="inventoryContent">
+                        <!-- category name -->
+                        <!-- start inventory for this category -->
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                            <tbody>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">Edit Item:</td>
+                                    <td class="mdl-data-table__cell--non-numeric"><input type="text" id="editedItemName"></td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">Edit Stock:</td>
+                                    <td class="mdl-data-table__cell--non-numeric"><input type="text" id="editedItemStock"></td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">Edit Price:</td>
+                                    <td class="mdl-data-table__cell--non-numeric"><input type="text" id="editedItemPrice"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            <br>
+                                <nav class="mdl-navigation">
+                                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button" onclick="cancel()">Cancel</a>
+                                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button" onclick="submit()">Submit</a>
+                                </nav>
+                        <!-- end inventory for this category -->
+                    </div>
+                </div>
+                <!-- end category 1 -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/shared.js"></script>
+    <script src="js/edit.js"></script>
+</body>
+</html>
